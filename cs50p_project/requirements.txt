@@ -1,0 +1,6 @@
+# Libraries used
+zeep
+tabulate
+beautifulsoup4
+requests
+pytest
