@@ -5,6 +5,8 @@ This project is a **command-line application** that calculates the tax liability
 
 The program dynamically queries the exchange rate for a given date and calculates the tax amounts based on Hungarian tax laws. It supports both **web scraping (BeautifulSoup)** and **SOAP API requests** to fetch exchange rates.
 
+For maximum portability and ease of use, the application is **fully containerized using Docker**. This ensures a seamless experience without dependency issues.
+
 ---
 
 ## Features
@@ -29,20 +31,12 @@ The program dynamically queries the exchange rate for a given date and calculate
 - Unit tests implemented with **pytest**
 - Code follows **PEP8 style guide**
 
-
-### ✅ Portability & Ease of Use
-- 🏗️ **Docker support** will be implemented later for easier installation and to prevent dependency issues
-- Works as a **standalone CLI tool** with minimal setup
+### ✅ **Docker Support**
+- 🏗️ The application is **fully containerized** to prevent dependency issues
+- 🏗️ No need to install Python or dependencies manually
+- 🏗️ Works on any machine with Docker installed
 
 ---
-
-## Development Roadmap
-
-### 📌 Planned Features & Enhancements
-- ✅ Compare **SOAP API vs Web Scraping**
-  - If SOAP API is **stable**, make it the primary source
-  - If it fails, fallback to web scraping
-- ✅ Test for **legacy data** (Excel & ShareWorks history vs actual transfers)
 
 ### 📌 Technical Goals
 - 🏗️ **Improve Python skills**: Regular Expressions (RE), Web Scraping, API calls
@@ -51,20 +45,25 @@ The program dynamically queries the exchange rate for a given date and calculate
 
 ---
 
-## Testing & Quality Assurance
-
-- ✅ Write **unit tests** for key functions (get_vested_stocks, get_date, get_current_rate, calculate_tax, get_release_price)
-- ✅ Perform **manual validation** by comparing results with real historical data
-- ✅ Use **pytest** to ensure code correctness
-- ✅ Check code style & design before finalizing
-
----
-
 ## Installation & Usage
 
-### 🔹 Option 1: Run it Locally
-```bash
-git clone https://github.com/your-repo/rsu-tax-calculator.git
-cd rsu-tax-calculator
-pip install -r requirements.txt
-python project.py
+### 🔹 Option 1: Run it Locally (Without Docker)
+
+- git clone https://github.com/your-repo/rsu-tax-calculator.git
+- cd rsu-tax-calculator
+- pip install -r requirements.txt
+- python project.py
+
+### 🔹 Option 2: Run it with Docker
+
+- docker pull martonlori/rsu-calculator
+- docker run -it martonlori/rsu-calculator
+- 💡 Make sure to use -it to enable interactive input!
+- 📦 Docker Hub: martonlori/rsu-calculator 
+
+## Testing and Quality assurance
+- ✅ Write unit tests for key functions (get_vested_stocks, get_date, get_current_rate, calculate_tax, get_release_price)
+- ✅ Perform manual validation by comparing results with real historical data
+- ✅ Use pytest to ensure code correctness
+- ✅ Check code style & design before finalizing
+
